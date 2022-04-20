@@ -6,6 +6,7 @@ import { CompanyListComponent } from './company-list/company-list.component';
 import { ViewCompanyComponent } from './view-company/view-company.component';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     WebListRoutingModule,
     
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    
 
   ]
 })

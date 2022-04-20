@@ -12,4 +12,11 @@ export class CompanyService {
   getCompanyList(){
    return  this.http.get('https://api.openbrewerydb.org/breweries')
   }
+
+
+  getCompanyData(companyId:string){
+    console.log('id', companyId);
+    
+    return this.http.get('https://api.openbrewerydb.org/breweries/'+ companyId);
+  }
 }

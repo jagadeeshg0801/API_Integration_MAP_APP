@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompanyService } from '../company.service';
 
 @Component({
@@ -9,13 +10,15 @@ import { CompanyService } from '../company.service';
 export class CompanyListComponent implements OnInit {
 
   comanyList: any = [];
+  selectedRecord :any = [];
   headers: any = [
-    {fieldName: 'name', displayName: 'Company Name'},
-    {fieldName: 'brewery_type', displayName: 'Type'},
-    {fieldName: 'country', displayName: 'Address'},
-    {fieldName: 'website_url', displayName: 'Website URL'},
+    {fieldName: 'name', displayName: 'Company Name', isLink: true},
+    {fieldName: 'brewery_type', displayName: 'Type', isLink: false},
+    {fieldName: 'country', displayName: 'Address', isLink: false},
+    {fieldName: 'website_url', displayName: 'Website URL', isLink: false},
   ];
-  constructor(private comService: CompanyService) { }
+  constructor(private comService: CompanyService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getCompanyList();
@@ -28,6 +31,12 @@ export class CompanyListComponent implements OnInit {
         this.comanyList = res || [];
       }
     );
+      
+  }
+
+  viewCompanyDetails(selectedCompany:any){
+    console.log('selected com', selectedCompany);
+    this.router.navigate(['list', selectedCompany.id])
     
   }
 

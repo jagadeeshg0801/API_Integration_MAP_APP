@@ -1,0 +1,19 @@
+.linkCls span {
+    border-bottom: 2px solid #c59647;
+    padding-bottom: 4px;
+    font-weight: 600;
+    color: #c59647;
+    cursor: pointer;
+}
+
+.linkCls span:hover {
+    color: blue !important;
+    border-bottom-color: blue !important;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    text-align: left;
+    border: 1px solid #e9ecef;
+    border-width: 0 0 1px 0;
+    padding: 0.5rem 0.5rem;
+}

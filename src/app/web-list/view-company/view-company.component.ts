@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-view-company',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCompanyComponent implements OnInit {
 
-  constructor() { }
+  companyData: any  = {};
+  constructor(private activeRoute: ActivatedRoute, private comService: CompanyService) { 
+    this.activeRoute.params.subscribe((params: any)=>{
+      console.log('params', params)
+        this.getCompanyData(params);
+    })
+  }
 
   ngOnInit(): void {
   }
 
+ 
+
+  getCompanyData(params:any){
+    this.comService.getCompanyData(params.id).subscribe((res)=>{
+      this.companyData = {...res}
+    })
+  }
 }
