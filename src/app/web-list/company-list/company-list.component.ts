@@ -17,6 +17,7 @@ export class CompanyListComponent implements OnInit {
     {fieldName: 'country', displayName: 'Address', isLink: false},
     {fieldName: 'website_url', displayName: 'Website URL', isLink: false},
   ];
+  childRouterActivated: boolean = false;
   constructor(private comService: CompanyService,
     private router: Router) { }
 
@@ -38,6 +39,17 @@ export class CompanyListComponent implements OnInit {
     console.log('selected com', selectedCompany);
     this.router.navigate(['list', selectedCompany.id])
     
+  }
+
+  onActivate(status:any){
+    console.log('active status', status);
+    this.childRouterActivated = true;
+    
+  }
+
+  onDeactivate(status:any){
+    console.log('Deactive status', status);
+    this.childRouterActivated = false;
   }
 
 }

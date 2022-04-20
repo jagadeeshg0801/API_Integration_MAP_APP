@@ -1,0 +1,12 @@
+.col-4.content-cell label {
+    font-variant: all-small-caps;
+    color: #7e8c86;
+}
+
+.col-4.content-cell  {
+    padding: 15px 10px;
+}
+
+.content-cell h5 {
+    color: #59427d;
+}
