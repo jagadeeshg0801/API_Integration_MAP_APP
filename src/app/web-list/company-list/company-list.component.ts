@@ -37,6 +37,7 @@ export class CompanyListComponent implements OnInit {
 
   viewCompanyDetails(selectedCompany:any){
     console.log('selected com', selectedCompany);
+    this.selectedRecord = [selectedCompany]
     this.router.navigate(['list', selectedCompany.id])
     
   }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeModule } from './home/home.module';
+import { SearchCompanyComponent } from './web-list/search-company/search-company.component';
 
 const routes: Routes = [
   {
@@ -10,8 +11,10 @@ const routes: Routes = [
    path: '',   redirectTo: 'home', pathMatch: 'full',
   },
   {
-    path: 'list', loadChildren: () => import('./web-list/web-list.module').then(module => module.WebListModule)
-    
+    path: 'list', loadChildren: () => import('./web-list/web-list.module').then(module => module.WebListModule)    
+  },
+  {
+    path: 'search', component: SearchCompanyComponent
   }
 
 ];

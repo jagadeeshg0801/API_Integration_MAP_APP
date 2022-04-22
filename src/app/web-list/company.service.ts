@@ -19,4 +19,8 @@ export class CompanyService {
     
     return this.http.get('https://api.openbrewerydb.org/breweries/'+ companyId);
   }
+
+  searchCompaniesByName(searchText: string){
+    return this.http.get('https://api.openbrewerydb.org/breweries/search?query='+searchText)
+  }
 }

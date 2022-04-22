@@ -1,0 +1,54 @@
+
+<div class="containter-fluid">
+    <div class="row">
+        <div class="col-12 form-group search_panel">
+            <label>Search</label>
+            <input type="text" class="form-control" [(ngModel)]="searchText" />
+            <button type="button" class="btn btn-primary" (click)="getCompanyList()">Search</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="isSearched">
+    <ng-container *ngTemplateOutlet="gridPanel"></ng-container>
+</div>
+
+
+
+<ng-template #gridPanel>
+    <p-table [columns]="headers" [value]="companyList"  [(selection)]="selectedRecord"  dataKey="name"  selectionMode="single" styleClass="p-datatable-customers"    [rows]="10" [paginator]="true" >
+        <ng-template pTemplate="caption" let-title>
+            <h6 style="color:blue"> Company List</h6>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <!-- <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th> -->
+                <th *ngFor="let col of columns">
+                    {{col.displayName}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <!-- <td>
+                    <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+                </td> -->
+                <td *ngFor="let col of columns"> 
+                    <div class="" [ngClass]="{linkCls: col['isLink']}"> <!-- For Highlighting Links -->
+
+                            <!-- For Clickable Cells -->
+                            <span *ngIf="col.fieldName == 'view'" (click)="viewCompanyDetails(rowData)"> {{rowData[col.fieldName]}} </span> 
+                            
+
+                            <!-- For Not Clickable Cells -->
+                            <span *ngIf="col.fieldName != 'view'">{{rowData[col.fieldName]}} </span>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</ng-template>

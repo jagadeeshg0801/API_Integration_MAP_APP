@@ -8,17 +8,26 @@ import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { AgmCoreModule } from '@agm/core';
+import { SearchCompanyComponent } from './search-company/search-company.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CompanyListComponent,
-    ViewCompanyComponent
+    ViewCompanyComponent,
+    SearchCompanyComponent
   ],
   imports: [
     CommonModule,
     WebListRoutingModule,
-    
     TableModule,
     HttpClientModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDkN1aki3_aiscyePlZLciulJkuF7Gh3YI',
+      libraries: ['places']
+    })
     
 
   ]

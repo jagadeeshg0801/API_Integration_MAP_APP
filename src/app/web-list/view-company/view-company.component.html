@@ -31,4 +31,20 @@
             <h5>{{companyData?.website_url}}</h5>
         </div>
     </div>
+    <div class="row">
+        <div class="col-6" *ngIf="showMap">
+            <h2>Map layout</h2>
+            <agm-map 
+            [latitude]='lat' 
+            [longitude]='long'
+            >
+           
+             <agm-marker 
+                 [latitude]="lat" 
+                 [longitude]="long">    
+             </agm-marker>
+           
+         </agm-map>
+        </div>
+    </div>
 </div>
