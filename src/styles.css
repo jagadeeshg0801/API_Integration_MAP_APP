@@ -14,7 +14,64 @@
 
 ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
     text-align: left;
-    border: 1px solid #e9ecef;
+    border: 1px solid #473c7e;;
     border-width: 0 0 1px 0;
     padding: 0.5rem 0.5rem;
+}
+.container.container-body {
+    border: 2px solid #473c7e;
+    background: #fff;
+}
+/* view page css */
+h5.container-heading {
+    background: #473c7e;
+    padding: 10px;
+    margin-bottom: 0;
+    border: 2px solid #473c7e;
+    margin-top: 2%;
+    color: #fff;
+}
+
+/* Search Company Page CSS Starts here........... */
+.search_panel .form-control{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 5px;
+}
+
+.search_panel .btn.btn-primary{
+    position: absolute;
+    right: 0;
+    top: 23px;
+}
+
+.search_panel {
+    position: relative;
+    margin: 10px auto;
+}
+
+
+/* table css custom */
+body {
+    background: linear-gradient(to bottom left, cyan 50%, #a08ff3 60%);
+    min-height: 100vh;
+}
+.bg-dark {
+--bs-bg-opacity: 1;
+/* background-color: chocolate; */
+background-color: #473c7e !important;
+}
+.p-paginator {
+    background: #ffffffad;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    background: #ffffffb3;
+}
+.p-datatable .p-datatable-thead > tr > th {
+    background: #f8f9fab5;
+}
+
+.p-datatable .p-datatable-header {
+    background: #f8f9faab;
 }

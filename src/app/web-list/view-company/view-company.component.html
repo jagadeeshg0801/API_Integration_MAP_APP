@@ -1,8 +1,8 @@
 
-<h5 class="alert alert-success">
-   <span><a [routerLink]="['/list']">List</a></span> > Viewing Details for <b> {{companyData?.name}}</b></h5>
+<h5 class="container-heading"> 
+   <span><a href="javascript:void(0);" (click)="navigateTo()"> Back </a> </span> >  Viewing Details for <b> {{companyData?.name}}</b> </h5>
 
-<div class="container">
+<div class="container container-body">
     
     <div class="row">
         <div class="col-4 content-cell">
@@ -31,7 +31,8 @@
             <h5>{{companyData?.website_url}}</h5>
         </div>
     </div>
-    <div class="row">
+    <!-- Commented this block, because of Billability issue for the Maps from Google -->
+    <!-- <div class="row">
         <div class="col-6" *ngIf="showMap">
             <h2>Map layout</h2>
             <agm-map 
@@ -46,5 +47,5 @@
            
          </agm-map>
         </div>
-    </div>
+    </div> -->
 </div>

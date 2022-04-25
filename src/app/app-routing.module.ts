@@ -12,9 +12,6 @@ const routes: Routes = [
   },
   {
     path: 'list', loadChildren: () => import('./web-list/web-list.module').then(module => module.WebListModule)    
-  },
-  {
-    path: 'search', component: SearchCompanyComponent
   }
 
 ];
