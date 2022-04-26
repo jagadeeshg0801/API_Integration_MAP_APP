@@ -10,3 +10,12 @@
 .content-cell h5 {
     color: #59427d;
 }
+
+.container-heading > b{
+    color: #8fe9f3;
+    border-bottom: 1px dotted;
+}
+
+.container-heading > span a {
+    color:  #2ffbf9 !important;
+}

@@ -4,3 +4,9 @@
         align-items: center;
         justify-content: center;
 }
+
+
+.landing-page h5{
+    font-size: 4rem;
+    font-variant: small-caps;
+}
